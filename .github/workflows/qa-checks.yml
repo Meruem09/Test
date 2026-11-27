@@ -1,0 +1,17 @@
+name: QA checks
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "build passes"
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "lint passes"
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "one test fails on purpose, so the side panel shows a failed check"
+          exit 1
